@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.4;net45</TargetFrameworks>
+    <Authors>Marlin Brüggemann</Authors>
+    <Company>Tireless Software UG</Company>
+    <Description>A Spamhaus implementation for .NET Standard and .Net 4.5. Supports adding IP filter and query Spamhaus.</Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/mabru47/Spamhaus.Net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mabru47/Spamhaus.Net.git</RepositoryUrl>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DnsClient" Version="1.0.7" />
+    <!-- <PackageReference Include="System.Net.NameResolution" Version="4.3.0" /> -->
+    <PackageReference Include="Tireless.IPTree" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+  </ItemGroup>
+</Project>
